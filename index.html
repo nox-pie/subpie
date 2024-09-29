@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SubPie</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" sizes="32x32" href="./images/favicon.ico">
+</head>
+<body>
+  <!-- Navigation Buttons -->
+  <div id="nav-buttons"></div>
+  <button class="account">Account</button>
+
+  <!-- Main Content -->
+  <div class="container">
+    <header>
+      <h1>SUB</h1>
+      <H1>PIE</H1>
+    </header>
+
+    <!-- Distance Calculator Section -->
+    <section class="distance-section">
+      <h2>Distance and Time Calculator</h2>
+
+      <div class="inputs">
+        <label for="origin">Origin:</label>
+        <input type="text" id="origin" placeholder="Enter a start location..." />
+        
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" placeholder="Enter a end location..." />
+      </div>
+
+      <div class="buttons">
+        <button id="submit">Calculate</button>
+        <button id="clear">Clear</button>
+      </div>
+
+      <div class="result">
+        <p id="output"></p>
+      </div>
+
+      <div id="map"></div>
+    </section>
+
+    <!-- SubPie Tip Calculator Section -->
+    <section class="subpie-section">
+      <h2>Trip Cost Calculator</h2>
+
+      <div class="menu left-menu">
+        <div class="rate">
+          <label for="rate-input">Cost Per Km:</label> <br>
+          <input class="rate-input input" placeholder="$/km" id="rate-input" onkeyup="if(this.value<0){this.value= this.value * -1}" type="number" min="0">
+        </div>
+
+        <div class="people-number">
+          <label for="people-number-input">Number of People:</label> <br>
+          <input class="people-number-input input" id="people-number-input" name="people-number-input" onkeyup="if(this.value<0){this.value= this.value * -1}" type="number" min="1">
+        </div>
+
+        <div class="bill">
+          <label for="bill-input">Total Cost:</label> <br>
+          <input class="bill-input input" name="bill-input" id="bill-input" readonly>
+        </div>
+        
+        <div class="tip-amount">
+          <label for="btn">Miscellaneous Expenses:- <span class="selectedTipAmount" id="selectedTipAmount">0%</span></label>
+          <div class="btn-container">
+            <button class="amount" data-amount=0>0%</button>
+            <button class="amount" data-amount=10>10%</button>
+            <button class="amount" data-amount=20>20%</button>
+            <button class="amount" data-amount=25>25%</button>
+            <button class="amount" data-amount=50>50%</button>
+            <div class="input-box">
+              <input class="amount custom-input" data-amount=0 id="custom-input" type="number" onkeyup="checkInput(this.value)" placeholder="Custom"></input>
+              <span class="percentage-icon" id="percentage-icon">%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu right-menu">
+        <div class="results">
+          <div class="tip-amount-person">
+            <div class="text-container">
+              <h2>Miscellaneous</h2>
+              <span>/person</span>
+            </div>
+            <div>
+              <span class="tip-amount-text money-text" id="tip-amount-text">0$</span>
+            </div>
+          </div>
+
+          <div class="total">
+            <div class="text-container">
+              <h2>Total</h2>
+              <span>/person</span>
+            </div>
+            <div>
+              <span class="total-text money-text" id="total-text">0$</span>
+            </div>
+          </div>
+
+          <button class="reset" id="reset-btn">Reset</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Google Maps API for both functionalities -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAulWqn9LuZdYKUhmOD9o2hvTTgcwGSqZ0&libraries=places"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
